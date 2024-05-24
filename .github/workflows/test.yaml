@@ -1,0 +1,18 @@
+---
+
+name: main-source-branch-check
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+    branches:
+      - main
+
+permissions:
+  statuses: write 
+
+jobs:
+  main-source-branch-check:
+    uses: adam-hughes-modmed/modmed-cloud-tfm-terraform-repository/.github/workflows/main-source-branch-check.yaml@feature/ah-ENG-42550-test_branch_security
